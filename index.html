@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명신여고 코딩 포트폴리오 - [학생 이름]</title>
+    <!-- Tailwind CSS 로드 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter 폰트 설정 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb; /* 매우 밝은 푸른색 계열 배경 */
+            scroll-behavior: smooth;
+        }
+        /* 커스텀 스크롤바 디자인 (선택 사항) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #3b82f6; /* Tailwind blue-500 */
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- 1. 네비게이션 바 (Sticky Header, 반응형) -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- 로고/이름 -->
+                <a href="#home" class="text-xl font-extrabold text-blue-600 hover:text-blue-800 transition duration-300">
+                    MY CODING JOURNEY
+                </a>
+
+                <!-- 데스크톱 메뉴 -->
+                <nav class="hidden md:flex space-x-8 font-medium">
+                    <a href="#home" class="text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">소개</a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-600 transition duration-300">프로젝트</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">연락</a>
+                </nav>
+
+                <!-- 모바일 햄버거 버튼 -->
+                <button id="menu-toggle" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 모바일 메뉴 드롭다운 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">소개</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">프로젝트</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">연락</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. 홈/히어로 섹션 (푸른 계열 배경) -->
+        <section id="home" class="min-h-screen flex items-center justify-center text-center bg-gradient-to-br from-blue-600 to-blue-800 text-white p-4">
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg sm:text-xl mb-4 font-light animate-pulse">명신여자고등학교 1학년</p>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+                    세상을 코딩하는<br><span class="text-teal-300">[본인 이름]</span>의 포트폴리오
+                </h1>
+                <p class="text-xl sm:text-2xl mb-10 font-light">
+                    앱과 챗봇 개발이 즐거운 코딩 꿈나무의 여정을 소개합니다.
+                </p>
+                <a href="#projects" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-xl text-blue-800 bg-white hover:bg-blue-50 transition duration-300 transform hover:scale-105">
+                    작품 보러 가기 (↓)
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. 소개 섹션 (About Me) -->
+        <section id="about" class="py-20 lg:py-32 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-12 text-blue-600">👧 About Me</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <p class="text-lg leading-relaxed">
+                            안녕하세요! 명신여고 1학년 <span class="font-semibold text-blue-600">[본인 이름]</span>입니다. 중학교 때 우연히 프로그래밍을 접한 이후 코딩의 무한한 가능성에 매료되어 앱과 챗봇 개발을 취미로 삼고 있습니다.
+                        </p>
+                        <p class="text-lg leading-relaxed">
+                            특히 사용자에게 편리함을 제공하는 **인터랙티브한 솔루션**을 만드는 것에 흥미를 느낍니다. 지금은 Python, JavaScript를 주로 사용하며, 사용자들이 '와!' 할 만한 멋진 결과물을 만들어내는 것이 목표입니다.
+                        </p>
+                        <ul class="space-y-2 list-inside list-disc text-gray-600 mt-4">
+                            <li>좋아하는 언어: Python, JavaScript</li>
+                            <li>주요 관심 분야: 인공지능 챗봇, 모바일 앱 (하이브리드)</li>
+                            <li>나의 강점: 새로운 기술을 빠르게 배우고 적용하는 능력</li>
+                        </ul>
+                    </div>
+                    <!-- 프로필 이미지 또는 아이콘 Placeholder -->
+                    <div class="flex justify-center p-8 bg-blue-50 rounded-xl shadow-lg">
+                        <svg class="w-32 h-32 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <span class="text-xl font-bold text-blue-600 ml-4 self-center"> &lt;Code is Fun /&gt;</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 프로젝트 섹션 -->
+        <section id="projects" class="py-20 lg:py-32 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-16 text-blue-600">✨ My Projects</h2>
+
+                <!-- 프로젝트 그리드 -->
+                <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+
+                    <!-- 프로젝트 카드 1: 챗봇 -->
+                    <div class="project-card bg-white p-6 rounded-xl shadow-2xl hover:shadow-blue-300/50 transition duration-500 transform hover:-translate-y-1">
+                        <div class="text-blue-500 mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-900">똑똑한 학습 도우미 챗봇</h3>
+                        <p class="text-sm text-gray-500 mb-4">Python, TensorFlow, Flask</p>
+                        <p class="text-gray-700 mb-4">
+                            사용자의 질문에 맞춰 학습 자료를 추천하고 간단한 퀴즈를 내주는 AI 기반 챗봇입니다. 자연어 처리에 대한 이해를 높이기 위해 제작했습니다.
+                        </p>
+                        <a href="https://github.com/yourid/chatbot" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition duration-300">
+                            자세히 보기 &rarr;
+                        </a>
+                    </div>
+
+                    <!-- 프로젝트 카드 2: 앱 -->
+                    <div class="project-card bg-white p-6 rounded-xl shadow-2xl hover:shadow-blue-300/50 transition duration-500 transform hover:-translate-y-1">
+                        <div class="text-blue-500 mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-900">명신여고 급식 알림 앱</h3>
+                        <p class="text-sm text-gray-500 mb-4">HTML, CSS, JavaScript (React Native 혹은 Cordova 적용 예정)</p>
+                        <p class="text-gray-700 mb-4">
+                            학교 급식 정보를 실시간으로 보여주고, 좋아하는 메뉴에 투표할 수 있는 기능이 있는 모바일 앱입니다. API 연동 연습을 위해 제작했습니다.
+                        </p>
+                        <a href="https://github.com/yourid/meal-app" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition duration-300">
+                            자세히 보기 &rarr;
+                        </a>
+                    </div>
+
+                    <!-- 프로젝트 카드 3: 기타 작품 -->
+                    <div class="project-card bg-white p-6 rounded-xl shadow-2xl hover:shadow-blue-300/50 transition duration-500 transform hover:-translate-y-1">
+                        <div class="text-blue-500 mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-6.75-3H12a2 2 0 00-2 2v2"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-900">나만의 웹 포트폴리오 (지금 보는 이것!)</h3>
+                        <p class="text-sm text-gray-500 mb-4">HTML, Tailwind CSS, JavaScript</p>
+                        <p class="text-gray-700 mb-4">
+                            반응형 디자인과 세련된 UI/UX 구현 능력을 보여주기 위해 스스로 디자인하고 코딩한 웹사이트입니다. 앞으로의 코딩 작품들이 계속 업데이트 될 예정입니다.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition duration-300">
+                            연락하기 &rarr;
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 연락 섹션 (Contact) -->
+        <section id="contact" class="py-20 lg:py-32 bg-blue-50">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-6 text-blue-600">💌 Contact</h2>
+                <p class="text-xl text-gray-700 mb-8">
+                    저의 코딩 여정에 관심이 있으시다면 언제든지 연락 주세요!
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-center space-x-3 text-lg">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span class="font-medium">your.email@example.com</span>
+                    </div>
+                    <div class="flex items-center justify-center space-x-3 text-lg">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <a href="https://github.com/your-github-id" target="_blank" class="font-medium text-blue-600 hover:text-blue-800 transition duration-300">github.com/your-github-id</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 6. 푸터 -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <p class="text-sm">&copy; 2025 [본인 이름]. Made with 💙 and Code.</p>
+    </footer>
+
+    <!-- 7. JavaScript for Interactivity -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // 햄버거 메뉴 토글 기능
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 모바일 메뉴 항목 클릭 시 메뉴 닫기 (반응형 대응)
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 부드러운 스크롤 (순수 CSS scroll-behavior: smooth 대신 JS로 폴백 가능)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // 기본 앵커 이동 방지 (Tailwind가 포함되지 않은 환경 대비)
+                if (this.hostname === location.hostname && this.pathname === location.pathname) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // 스크롤 위치 계산 (고정된 헤더 높이만큼 빼기)
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
